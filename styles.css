@@ -43,6 +43,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    will-change: transform;
+
 }
 
 .layers {
@@ -68,18 +70,24 @@ body {
     transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
     z-index: 0;
     /* background-size: 47%; */
+    will-change: transform;
+
 }
 
 .layers__middle {
     transform: translate3d(0, calc(var(--scrollTop)/2.5), 0);
     /* background-size: cover;  */
     z-index: 2;
+    will-change: transform;
+
 }
 
 .layers__front {
     transform: translate3d(0, calc(var(--scrollTop)/5), 0);
     /* background-size: cover; */
     z-index: 3;
+    will-change: transform;
+
 }
 
 .layer__header {
@@ -100,6 +108,8 @@ body {
     font-size: calc(var(--index)*2);
     letter-spacing: calc(var(--index)/10);
     margin-top: calc(var(--index)*-8);
+    will-change: transform;
+
 }
 
 .layers__title {
