@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --index: calc(1vw+1vh); /*учитывает ширину и высоту при растягивании экрана,
+    чтобы сделать резиновый шрифт*/
+    --text: #eeedeabd;
+
+}
+
+@font-face {
+    font-family: raleway_f  ;
+    src: url(../fonts/raleway-regular.woff2);
+} 
+
+@font-face {
+    font-family: raleway_f  ;
+    src: url(../fonts/raleway-black.woff2);
+    font-weight: 900;
+}
+
+body {
+    background-color: #010101c7;
+    font-family: raleway_f, sans-serif;
+    line-height: 1.55; /* межстрочный интервал*/
+    /* background-size: contain; */
+}
+
+.main__header {
+    position: relative;
+}
+
+.main__header::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: calc(var(--index)*18);
+    z-index: 100;
+    background-image: url(../img/ground.png);
+    bottom: calc(var(--index)*-8);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.layers {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    will-change: transform; /*данным тегам браузеру стоит уделить больше внимания*/
+}
+
+.layers__base {
+    transform: translate3d(0, calc(var(--scrollTop)/1.6), 0);
+    z-index: 0;
+    /* background-size: 47%; */
+}
+
+.layers__middle {
+    transform: translate3d(0, calc(var(--scrollTop)/2.5), 0);
+    /* background-size: cover;  */
+    z-index: 2;
+}
+
+.layers__front {
+    transform: translate3d(0, calc(var(--scrollTop)/5), 0);
+    /* background-size: cover; */
+    z-index: 3;
+}
+
+.layer__header {
+    z-index: 1;
+    transform: translate3d(0, calc(var(--scrollTop)/2), 0);
+    font-weight: 900;
+    line-height: 1.5;
+    text-transform: uppercase;
+    will-change: transform;
+    /* font-size: calc(var(--index)*2.5); */
+    color: #eeedeabd;
+    text-shadow: 0 0 20px #9D8234;
+}
+
+.layers__caption {
+    font-size: large;
+    /* text-transform: uppercase; */
+    font-size: calc(var(--index)*2);
+    letter-spacing: calc(var(--index)/10);
+    margin-top: calc(var(--index)*-8);
+}
+
+.layers__title {
+    /* font-size: 36px; */
+    /* letter-spacing: 5px; */
+    white-space: nowrap;
+    font-size: calc(var(--index)*3);
+    letter-spacing: calc(var(--index)/3);
+}
+
+.main-article {
+    /* height: 100vh; */
+    min-height: 100vh;
+    background-size: cover;
+    background-image: center;
+    position: relative;
+    display: flex;
+    text-align: center;
+    color: var(--text);
+    justify-content: center;
+    align-items: center;
+}
+
+.main-article__header {
+    text-transform: uppercase;
+    font-size: calc(var(--index)*2);
+    letter-spacing: calc(var(--index)/10);
+    transform: translate3d(0, calc(var(--scrollTop)/-10), 0);
+    will-change: transform;
+}
+
+.main-article__paragraph {
+    max-width: calc(var(--index)*50);
+    font-size: calc(var(--index)*1.5);
+    margin-top: calc(var(--index)*1.1);
+    transform: translate3d(0, calc(var(--scrollTop)/-10), 0);
+    will-change: transform;
+}
+
+.copy {
+    position: absolute;
+    bottom: calc(var(--index)*3);
+    color: #eeedea2e;
+    font-size: calc(var(--index)*.90);
+    letter-spacing: calc(var(--index)/3);
+
+}
+
+
