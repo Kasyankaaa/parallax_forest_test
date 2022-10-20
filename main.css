@@ -38,7 +38,7 @@ body {
     width: 100%;
     height: calc(var(--index)*18);
     z-index: 100;
-    background-image: url(../img/ground.png);
+    background-image: url(ground.png);
     bottom: calc(var(--index)*-8);
     background-size: cover;
     background-repeat: no-repeat;
